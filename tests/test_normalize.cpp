@@ -1,7 +1,7 @@
 #ifdef UNIT_TESTS
   #include "gtest/gtest.h"
 #endif  //UNIT_TESTS
-#include "main.h"
+#include "normalize.h"
 
 #ifdef UNIT_TESTS
 

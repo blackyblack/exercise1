@@ -1,8 +1,8 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _NORMALIZE_H_
+#define _NORMALIZE_H_
 
 #include <string>
 
 std::string normalize(const std::string &path);
 
-#endif
+#endif //_NORMALIZE_H_
