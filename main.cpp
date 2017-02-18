@@ -9,10 +9,16 @@ int main(int argc, char **argv)
   (void) argc;
   (void) argv;
 
-  std::string testInput = "/foo/../../baz";
+  if(argc <= 1)
+  {
+    fprintf(stderr, "Usage: main path\r\n");
+    return 1;
+  }
+
+  std::string testInput = argv[1];
   std::string output = normalize(testInput);
 
-  fprintf(stderr, "Input: %s\r\nOutput: %s\r\n", testInput.c_str(), output.c_str());
+  fprintf(stdout, "%s\r\n", output.c_str());
   return 0;
 }
 
