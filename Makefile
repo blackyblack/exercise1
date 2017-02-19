@@ -1,48 +1,73 @@
-# prog name
-PROG    = main
-TEST    = test
+EXECUTABLE  = normalize
 
-NORMALIZE_SOURCE = normalize.cpp
-NORMALIZE_O = $(addsuffix .o,$(basename $(NORMALIZE_SOURCE)))
+# compiler
+CXX      = g++
+CFLAGS   = -g -std=gnu++0x -Wall -Wno-reorder -I.
+LFLAGS   = 
+LIBS     = 
 
-MAIN_SOURCE = main.cpp
-MAIN_O = $(addsuffix .o,$(basename $(MAIN_SOURCE)))
+# directory names
+SRCDIR   = 
+OBJDIR   = obj
+TSTDIR   = tests
+GTESTDIR = gtest
+BENCHMARKDIR = benchmark
+BENCHDIR = benchs
 
-TEST_SOURCE = test.cpp tests/test_normalize.cpp
-TEST_O = $(addsuffix .o,$(basename $(TEST_SOURCE)))
+SOURCES   := $(wildcard *.cpp)
+OBJECTS   := $(SOURCES:%.cpp=%.o)
+TEST_SRC  := $(wildcard $(TSTDIR)/*.cpp)
+TESTS     := $(TEST_SRC:$(TSTDIR)/%.cpp=$(TSTDIR)/%.o)
+GTEST_SRC := $(wildcard $(GTESTDIR)/*.cc)
+GTEST    := $(GTEST_SRC:$(GTESTDIR)/%.cc=$(GTESTDIR)/%.o)
+BENCH_SRC := $(wildcard $(BENCHMARKDIR)/*.cc)
+BENCHMARK := $(BENCH_SRC:$(BENCHMARKDIR)/%.cc=$(BENCHMARKDIR)/%.o)
+BENCHS_SRC  := $(wildcard $(BENCHDIR)/*.cpp)
+BENCHS     := $(BENCHS_SRC:$(BENCHDIR)/%.cpp=$(BENCHDIR)/%.o)
+rm         = rm -rf
 
-PROG_O = $(NORMALIZE_O) $(MAIN_O)
-PTEST_O = $(TEST_O)
-ALL_O = $(NORMALIZE_O) $(MAIN_O) $(TEST_O)
+all: $(EXECUTABLE)
 
-all: $(PROG) $(TEST)
+$(EXECUTABLE): $(OBJECTS)
+	$(CXX) $(CFLAGS) $(LFLAGS) -o $@ $+ $(LIBS)
 
-CDEFS   =
+$(OBJECTS): %.o : %.cpp
+	$(CXX) $(CFLAGS) -c -o $@ $<
 
-OFLAG = -O3	
+$(EXECUTABLE)-test: main-test.o $(GTEST) normalize.o $(TESTS)
+	$(CXX) $(CFLAGS) $(LFLAGS) -o $@ main-test.o $(GTEST) normalize.o $(TESTS) $(LIBS) -lpthread
 
-CXX      ?= g++
-CFLAGS   ?= -W -Wall -g $(OFLAG)
-LFLAGS   ?=
-PROJ_DIR =.
+$(TESTS): $(TSTDIR)/%.o : $(TSTDIR)/%.cpp
+	$(CXX) $(CFLAGS) -DENABLE_TESTS -c -o $@ $<
 
-INCS     = -I$(PROJ_DIR)/
-LIBS     =
+$(GTEST): $(GTESTDIR)/%.o : $(GTESTDIR)/%.cc
+	$(CXX) $(CFLAGS) -c -o $@ $<
 
-$(PROG): $(PROG_O)
-	$(CXX) $(CDEFS) $(CFLAGS) $(LFLAGS) $(PROG_O) $(LDFLAGS) $(LIBS) -o $@
+main-test.o: main.cpp
+	$(CXX) $(CFLAGS) -DENABLE_TESTS -c -o main-test.o main.cpp
 
-$(TEST): $(PROG_O) $(PTEST_O)
-	$(CXX) $(CDEFS) $(CFLAGS) $(LFLAGS) $(NORMALIZE_O) $(PTEST_O) $(LDFLAGS) $(LIBS) -lpthread -o $@
-	./$(TEST)
+$(EXECUTABLE)-bench: main-bench.o $(BENCHMARK) normalize.o $(BENCHS)
+	$(CXX) $(CFLAGS) $(LFLAGS) -o $@ main-bench.o $(BENCHMARK) normalize.o $(BENCHS) $(LIBS) -lpthread
 
-$(PROG_O): %.o: %.cpp
-	$(CXX) $(CDEFS) $(CFLAGS) -c $(INCS) $< -o $@
+$(BENCHS): $(BENCHDIR)/%.o : $(BENCHDIR)/%.cpp
+	$(CXX) $(CFLAGS) -DENABLE_BENCHMARK -c -o $@ $<
 
-$(TEST_O): %.o: %.cpp
-	$(CXX) $(CDEFS) $(CFLAGS) -DUNIT_TESTS -c $(INCS) $< -o $@
+$(BENCHMARK): $(BENCHMARKDIR)/%.o : $(BENCHMARKDIR)/%.cc
+	$(CXX) $(CFLAGS) -DHAVE_STD_REGEX -c -o $@ $<
+
+main-bench.o: main.cpp
+	$(CXX) $(CFLAGS) -DENABLE_BENCHMARK -c -o main-bench.o main.cpp
+
 
 clean:
-	rm -f $(ALL_O) $(PROG) $(PROG)-* $(TEST)
+	$(rm) $(TSTDIR)/*.o
+	$(rm) $(EXECUTABLE)
+	$(rm) $(EXECUTABLE)-test
+	$(rm) $(EXECUTABLE)-bench
+	$(rm) *.o
+	$(rm) $(GTEST)
+	$(rm) $(TESTS)
+	$(rm) $(BENCHMARK)
+	$(rm) $(BENCHS)
 
-.PHONY: all main test clean
+.PHONY: all check debug clean
