@@ -2,7 +2,15 @@
 #include <stdio.h>
 #include "normalize.h"
 
-#ifndef UNIT_TESTS
+#ifdef ENABLE_TESTS
+  #include "gtest/gtest.h"
+#endif  //ENABLE_TESTS
+
+#ifdef ENABLE_BENCHMARK
+  #include "benchmark/benchmark.h"
+#endif  //ENABLE_BENCHMARK
+
+#if !ENABLE_TESTS && !ENABLE_BENCHMARK
 
 int main(int argc, char **argv)
 {
@@ -22,4 +30,20 @@ int main(int argc, char **argv)
   return 0;
 }
 
-#endif  //!UNIT_TESTS
+#endif  //!ENABLE_TESTS && !ENABLE_BENCHMARK
+
+#ifdef ENABLE_TESTS
+
+int main(int argc, char **argv)
+{
+  testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
+
+#endif  //ENABLE_TESTS
+
+#ifdef ENABLE_BENCHMARK
+
+BENCHMARK_MAIN();
+
+#endif  //ENABLE_BENCHMARK

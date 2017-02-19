@@ -1,3 +1,11 @@
 *.o
 main
 test
+/Debug
+/Release
+/x64
+*.db
+*.opendb
+*.filters
+*.user
+/.vs

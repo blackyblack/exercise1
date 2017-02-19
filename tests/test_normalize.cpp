@@ -1,9 +1,9 @@
-#ifdef UNIT_TESTS
+#ifdef ENABLE_TESTS
   #include "gtest/gtest.h"
-#endif  //UNIT_TESTS
+#endif  //ENABLE_TESTS
 #include "normalize.h"
 
-#ifdef UNIT_TESTS
+#ifdef ENABLE_TESTS
 
 TEST(test1, normalize)
 {
@@ -50,4 +50,4 @@ TEST(test9, normalize)
   ASSERT_EQ(normalize("/../../"), "/");
 }
 
-#endif  //UNIT_TESTS
+#endif  //ENABLE_TESTS
