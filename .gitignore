@@ -9,3 +9,6 @@ test
 *.filters
 *.user
 /.vs
+normalize
+normalize-test
+normalize-bench
