@@ -2,7 +2,7 @@ EXECUTABLE  = normalize
 
 # compiler
 CXX      = g++
-CFLAGS   = -g -std=gnu++0x -O3 -Wall -Wno-reorder -I.
+CFLAGS   = -g -std=c++0x -O3 -Wall -Wno-reorder -I.
 LFLAGS   = 
 LIBS     = 
 
