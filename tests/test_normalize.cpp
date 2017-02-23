@@ -1,7 +1,7 @@
 #ifdef ENABLE_TESTS
   #include "gtest/gtest.h"
 #endif  //ENABLE_TESTS
-#include "normalize.h"
+#include "normalize-opt.h"
 
 #ifdef ENABLE_TESTS
 

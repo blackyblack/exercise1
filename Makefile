@@ -32,9 +32,6 @@ test: $(EXECUTABLE)-test
 bench: $(EXECUTABLE)-bench
 	./$(EXECUTABLE)-bench
 
-bench-opt: $(EXECUTABLE)-bench-opt
-	./$(EXECUTABLE)-bench-opt
-
 $(EXECUTABLE): main.o $(OBJECTS)
 	$(CXX) $(CFLAGS) $(LFLAGS) -o $@ main.o $(OBJECTS) $(LIBS)
 
@@ -69,9 +66,6 @@ $(BENCHMARK):
 
 main-bench.o: main.cpp
 	$(CXX) $(CFLAGS) -DENABLE_BENCHMARK -I$(BENCHMARKINC) -c -o main-bench.o main.cpp
-
-$(EXECUTABLE)-bench-opt: main-bench.o $(OBJECTS) $(BENCHMARK) $(BENCHS)
-	$(CXX) $(CFLAGS) $(LFLAGS) -o $@ main-bench.o $(OBJECTS) $(BENCHMARK) $(BENCHS) $(LIBS) -lpthread
 
 clean:
 	$(rm) $(TSTDIR)/*.o
