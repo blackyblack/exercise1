@@ -3,6 +3,6 @@
 
 #include <string>
 
-std::string normalize(const std::string &path);
+char *normalize(const char *path);
 
 #endif //_NORMALIZE_H_

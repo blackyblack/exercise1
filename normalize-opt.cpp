@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <stdexcept>
 #include <stdio.h>
 #include <string.h>
 
@@ -24,7 +25,6 @@ char *normalize(const char *path)
   size_t backlog[MAX_PATH_DEPTH];
   int backlogIndex = 0;
   parse_state_t currentState = SLASH;
-  size_t startIndex = 0;
   size_t outIndex = 0;
   size_t wordLength = 0;
 
@@ -60,7 +60,7 @@ char *normalize(const char *path)
       default:
         if ((backlogIndex + 1) >= MAX_PATH_DEPTH)
         {
-          throw std::exception("Path depth is over MAX_PATH_DEPTH");
+          throw std::runtime_error("Path depth is over MAX_PATH_DEPTH");
         }
         backlog[backlogIndex++] = i - wordLength;
         break;

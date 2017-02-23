@@ -1,37 +1,37 @@
 #ifdef ENABLE_BENCHMARK
   #include "benchmark/benchmark.h"
 #endif
-#include "normalize.h"
+#include "normalize-opt.h"
 
 #ifdef ENABLE_BENCHMARK
 
 static void BM_test1(benchmark::State& state) {
   while (state.KeepRunning())
-    normalize("../bar");
+    free(normalize("../bar"));
 }
 BENCHMARK(BM_test1);
 
 static void BM_test2(benchmark::State& state) {
   while (state.KeepRunning())
-    normalize("/foo/bar");
+    free(normalize("/foo/bar"));
 }
 BENCHMARK(BM_test2);
 
 static void BM_test3(benchmark::State& state) {
   while (state.KeepRunning())
-    normalize("/foo/bar/../baz");
+    free(normalize("/foo/bar/../baz"));
 }
 BENCHMARK(BM_test3);
 
 static void BM_test4(benchmark::State& state) {
   while (state.KeepRunning())
-    normalize("/foo/bar/./baz/");
+    free(normalize("/foo/bar/./baz/"));
 }
 BENCHMARK(BM_test4);
 
 static void BM_test5(benchmark::State& state) {
   while (state.KeepRunning())
-    normalize("/foo/../../baz");
+    free(normalize("/foo/../../baz"));
 }
 BENCHMARK(BM_test5);
 
