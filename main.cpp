@@ -23,10 +23,11 @@ int main(int argc, char **argv)
     return 1;
   }
 
-  std::string testInput = argv[1];
-  std::string output = normalize(testInput);
+  char *testInput = argv[1];
+  char *output = normalize(testInput);
 
-  fprintf(stdout, "%s\r\n", output.c_str());
+  fprintf(stdout, "%s\r\n", output);
+  free(output);
   return 0;
 }
 

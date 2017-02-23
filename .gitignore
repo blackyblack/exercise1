@@ -1,6 +1,5 @@
 *.o
 main
-test
 /Debug
 /Release
 /x64

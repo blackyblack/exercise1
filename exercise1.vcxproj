@@ -72,7 +72,7 @@
     <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(ProjectDir)gbench\include\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
@@ -85,7 +85,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;HAVE_STD_REGEX;ENABLE_BENCHMARK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalDependencies>shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -105,12 +105,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;HAVE_STD_REGEX;ENABLE_BENCHMARK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ENABLE_BENCHMARK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>shlwapi.lib;gbench\src\Release\benchmark.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,46 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="benchmark\benchmark.cc" />
-    <ClCompile Include="benchmark\benchmark_register.cc" />
-    <ClCompile Include="benchmark\colorprint.cc" />
-    <ClCompile Include="benchmark\commandlineflags.cc" />
-    <ClCompile Include="benchmark\complexity.cc" />
-    <ClCompile Include="benchmark\console_reporter.cc" />
-    <ClCompile Include="benchmark\csv_reporter.cc" />
-    <ClCompile Include="benchmark\json_reporter.cc" />
-    <ClCompile Include="benchmark\reporter.cc" />
-    <ClCompile Include="benchmark\sleep.cc" />
-    <ClCompile Include="benchmark\string_util.cc" />
-    <ClCompile Include="benchmark\sysinfo.cc" />
-    <ClCompile Include="benchmark\timers.cc" />
     <ClCompile Include="benchs\bench_normalize.cpp" />
     <ClCompile Include="gtest\gtest-all.cc" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="normalize.cpp" />
+    <ClCompile Include="normalize-opt.cpp" />
     <ClCompile Include="tests\test_normalize.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="benchmark\arraysize.h" />
-    <ClInclude Include="benchmark\benchmark.h" />
-    <ClInclude Include="benchmark\benchmark_api.h" />
-    <ClInclude Include="benchmark\benchmark_api_internal.h" />
-    <ClInclude Include="benchmark\check.h" />
-    <ClInclude Include="benchmark\colorprint.h" />
-    <ClInclude Include="benchmark\commandlineflags.h" />
-    <ClInclude Include="benchmark\complexity.h" />
-    <ClInclude Include="benchmark\cycleclock.h" />
-    <ClInclude Include="benchmark\internal_macros.h" />
-    <ClInclude Include="benchmark\log.h" />
-    <ClInclude Include="benchmark\macros.h" />
-    <ClInclude Include="benchmark\mutex.h" />
-    <ClInclude Include="benchmark\re.h" />
-    <ClInclude Include="benchmark\reporter.h" />
-    <ClInclude Include="benchmark\sleep.h" />
-    <ClInclude Include="benchmark\stat.h" />
-    <ClInclude Include="benchmark\string_util.h" />
-    <ClInclude Include="benchmark\sysinfo.h" />
-    <ClInclude Include="benchmark\timers.h" />
     <ClInclude Include="gtest\gtest.h" />
     <ClInclude Include="normalize.h" />
   </ItemGroup>

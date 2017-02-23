@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{09B353D2-B511-34D8-B1EA-526FE44AC6A2}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+ <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+ <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+ <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+ <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+ <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\programming\valkin\exercise1\gbench\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+ <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\programming\valkin\exercise1\gbench\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+ <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\programming\valkin\exercise1\gbench\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+ <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\programming\valkin\exercise1\gbench\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\programming\valkin\exercise1\gbench\CMakeLists.txt">
+     <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule F:/programming/valkin/exercise1/gbench/CMakeLists.txt</Message>
+     <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HF:/programming/valkin/exercise1/gbench -BF:/programming/valkin/exercise1/gbench --check-stamp-file F:/programming/valkin/exercise1/gbench/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+     <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/programming/valkin/exercise1/gbench/CMakeLists.txt;F:\programming\valkin\exercise1\gbench\CMakeLists.txt;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeCCompiler.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;F:\programming\valkin\exercise1\gbench\cmake\GetGitVersion.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;F:\programming\valkin\exercise1\gbench\cmake\AddCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;F:\programming\valkin\exercise1\gbench\cmake\CXXFeatureCheck.cmake;F:\programming\valkin\exercise1\gbench\cmake\std_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\gnu_posix_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\posix_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\steady_clock.cpp;C:\Program Files\CMake\share\cmake-3.8\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;F:\programming\valkin\exercise1\gbench\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+     <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\programming\valkin\exercise1\gbench\CMakeFiles\generate.stamp</Outputs>
+     <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+     <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule F:/programming/valkin/exercise1/gbench/CMakeLists.txt</Message>
+     <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HF:/programming/valkin/exercise1/gbench -BF:/programming/valkin/exercise1/gbench --check-stamp-file F:/programming/valkin/exercise1/gbench/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+     <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/programming/valkin/exercise1/gbench/CMakeLists.txt;F:\programming\valkin\exercise1\gbench\CMakeLists.txt;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeCCompiler.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;F:\programming\valkin\exercise1\gbench\cmake\GetGitVersion.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;F:\programming\valkin\exercise1\gbench\cmake\AddCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;F:\programming\valkin\exercise1\gbench\cmake\CXXFeatureCheck.cmake;F:\programming\valkin\exercise1\gbench\cmake\std_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\gnu_posix_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\posix_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\steady_clock.cpp;C:\Program Files\CMake\share\cmake-3.8\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;F:\programming\valkin\exercise1\gbench\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+     <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\programming\valkin\exercise1\gbench\CMakeFiles\generate.stamp</Outputs>
+     <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+     <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule F:/programming/valkin/exercise1/gbench/CMakeLists.txt</Message>
+     <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HF:/programming/valkin/exercise1/gbench -BF:/programming/valkin/exercise1/gbench --check-stamp-file F:/programming/valkin/exercise1/gbench/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+     <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/programming/valkin/exercise1/gbench/CMakeLists.txt;F:\programming\valkin\exercise1\gbench\CMakeLists.txt;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeCCompiler.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;F:\programming\valkin\exercise1\gbench\cmake\GetGitVersion.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;F:\programming\valkin\exercise1\gbench\cmake\AddCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;F:\programming\valkin\exercise1\gbench\cmake\CXXFeatureCheck.cmake;F:\programming\valkin\exercise1\gbench\cmake\std_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\gnu_posix_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\posix_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\steady_clock.cpp;C:\Program Files\CMake\share\cmake-3.8\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;F:\programming\valkin\exercise1\gbench\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+     <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\programming\valkin\exercise1\gbench\CMakeFiles\generate.stamp</Outputs>
+     <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+     <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule F:/programming/valkin/exercise1/gbench/CMakeLists.txt</Message>
+     <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HF:/programming/valkin/exercise1/gbench -BF:/programming/valkin/exercise1/gbench --check-stamp-file F:/programming/valkin/exercise1/gbench/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+     <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/programming/valkin/exercise1/gbench/CMakeLists.txt;F:\programming\valkin\exercise1\gbench\CMakeLists.txt;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeCCompiler.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;F:\programming\valkin\exercise1\gbench\CMakeFiles\3.8.0-rc1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;F:\programming\valkin\exercise1\gbench\cmake\GetGitVersion.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;F:\programming\valkin\exercise1\gbench\cmake\AddCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;F:\programming\valkin\exercise1\gbench\cmake\CXXFeatureCheck.cmake;F:\programming\valkin\exercise1\gbench\cmake\std_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\gnu_posix_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\posix_regex.cpp;F:\programming\valkin\exercise1\gbench\cmake\steady_clock.cpp;C:\Program Files\CMake\share\cmake-3.8\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;F:\programming\valkin\exercise1\gbench\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+     <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\programming\valkin\exercise1\gbench\CMakeFiles\generate.stamp</Outputs>
+     <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\ZERO_CHECK.vcxproj">
+      <Project>3D6EA490-D488-34F6-BA7D-1A0C06F01B4B</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\basic_test.vcxproj">
+      <Project>38F467C4-272E-3718-9D61-00464462D132</Project>
+      <Name>basic_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\src\benchmark.vcxproj">
+      <Project>D7892168-08FD-30BF-A611-6024C5E77A7B</Project>
+      <Name>benchmark</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\benchmark_test.vcxproj">
+      <Project>6F5E19A8-F2D3-3B8A-B086-5F2DD0891CD0</Project>
+      <Name>benchmark_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\complexity_test.vcxproj">
+      <Project>CFD9A3A7-B85B-3648-9654-826DC799139E</Project>
+      <Name>complexity_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\diagnostics_test.vcxproj">
+      <Project>444D9577-556A-3FC5-AE77-9E18719AE875</Project>
+      <Name>diagnostics_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\donotoptimize_test.vcxproj">
+      <Project>FDC75DB7-73E3-3934-8EEE-05E6565AF8A0</Project>
+      <Name>donotoptimize_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\filter_test.vcxproj">
+      <Project>8030EC20-5B67-3BD9-A892-0357B1552CB1</Project>
+      <Name>filter_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\fixture_test.vcxproj">
+      <Project>BE6C8A1F-A0DD-38D3-ACB1-5F3376B4E87B</Project>
+      <Name>fixture_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\map_test.vcxproj">
+      <Project>1DC4104D-4FA3-31E9-8CAC-A98FE0BD79B6</Project>
+      <Name>map_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\multiple_ranges_test.vcxproj">
+      <Project>75238041-1FDE-3835-95EA-6F1F394FCB50</Project>
+      <Name>multiple_ranges_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\options_test.vcxproj">
+      <Project>921E9820-4830-3E75-85EB-66A1268FB4CF</Project>
+      <Name>options_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\output_test_helper.vcxproj">
+      <Project>86262AD2-82BF-3E49-BBDF-418848027A2B</Project>
+      <Name>output_test_helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\register_benchmark_test.vcxproj">
+      <Project>210C70C7-34E2-380A-A6E3-7066E0DE2898</Project>
+      <Name>register_benchmark_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\reporter_output_test.vcxproj">
+      <Project>F6418330-9817-3EB2-8216-90C585724E20</Project>
+      <Name>reporter_output_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\programming\valkin\exercise1\gbench\test\skip_with_error_test.vcxproj">
+      <Project>8FE24A1D-5066-3B09-854F-06CE34669536</Project>
+      <Name>skip_with_error_test</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

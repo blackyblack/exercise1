@@ -7,47 +7,86 @@
 
 TEST(test1, normalize)
 {
-  ASSERT_EQ(normalize("../bar"), "/bar");
+  char *result = normalize("../bar");
+  ASSERT_EQ(strcmp(result, "/bar"), 0);
+  free(result);
 }
 
 TEST(test2, normalize)
 {
-  ASSERT_EQ(normalize("/foo/bar"), "/foo/bar");
+  char *result = normalize("/foo/bar");
+  ASSERT_EQ(strcmp(result, "/foo/bar"), 0);
+  free(result);
 }
 
 TEST(test3, normalize)
 {
-  ASSERT_EQ(normalize("/foo/bar/../baz"), "/foo/baz");
+  char *result = normalize("/foo/bar/../baz");
+  ASSERT_EQ(strcmp(result, "/foo/baz"), 0);
+  free(result);
 }
 
 TEST(test4, normalize)
 {
-  ASSERT_EQ(normalize("/foo/bar/./baz/"), "/foo/bar/baz/");
+  char *result = normalize("/foo/bar/./baz/");
+  ASSERT_EQ(strcmp(result, "/foo/bar/baz/"), 0);
+  free(result);
 }
 
 TEST(test5, normalize)
 {
-  ASSERT_EQ(normalize("/foo/../../baz"), "/baz");
+  char *result = normalize("/foo/../../baz");
+  ASSERT_EQ(strcmp(result, "/baz"), 0);
+  free(result);
 }
 
 TEST(test6, normalize)
 {
-  ASSERT_EQ(normalize("/"), "/");
+  char *result = normalize("/");
+  ASSERT_EQ(strcmp(result, "/"), 0);
+  free(result);
 }
 
 TEST(test7, normalize)
 {
-  ASSERT_EQ(normalize(""), "/");
+  char *result = normalize("");
+  ASSERT_EQ(strcmp(result, "/"), 0);
+  free(result);
 }
 
 TEST(test8, normalize)
 {
-  ASSERT_EQ(normalize("../"), "/");
+  char *result = normalize("../");
+  ASSERT_EQ(strcmp(result, "/"), 0);
+  free(result);
 }
 
 TEST(test9, normalize)
 {
-  ASSERT_EQ(normalize("/../../"), "/");
+  char *result = normalize("/../../");
+  ASSERT_EQ(strcmp(result, "/"), 0);
+  free(result);
+}
+
+TEST(test10, normalize)
+{
+  char *result = normalize("foo");
+  ASSERT_EQ(strcmp(result, "/foo"), 0);
+  free(result);
+}
+
+TEST(test11, normalize)
+{
+  char *result = normalize("foo/../../bar/");
+  ASSERT_EQ(strcmp(result, "/bar/"), 0);
+  free(result);
+}
+
+TEST(test12, normalize)
+{
+  char *result = normalize("foo/..bar../");
+  ASSERT_EQ(strcmp(result, "/foo/..bar../"), 0);
+  free(result);
 }
 
 #endif  //ENABLE_TESTS
